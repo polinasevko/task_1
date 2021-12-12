@@ -16,10 +16,9 @@ def main():
     rooms_with_studs = unification_source_data(rooms, students)
 
     # CLI parser
-    format, files = cli_parser()
+    format, file = cli_parser()
     serializer = factory.get_format(format)
-    for file in files:
-        serializer.dump(rooms_with_studs, f'{file}')
+    serializer.dump(rooms_with_studs, f'{file}')
 
 
 if __name__ == "__main__":
