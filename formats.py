@@ -19,7 +19,7 @@ class LoadFormat(ABC):
         pass
 
 
-class Json(UploadFormat, LoadFormat):
+class JsonSerializer(UploadFormat, LoadFormat):
     def dumps(self, obj):
         return json.dumps(obj)
 
@@ -28,7 +28,7 @@ class Json(UploadFormat, LoadFormat):
             return json.load(fp)
 
 
-class Xml(UploadFormat):
+class XmlSerializer(UploadFormat):
     def dumps(self, obj):
         xml = dicttoxml(obj, custom_root='rooms', attr_type=False, item_func=lambda x: x[:-1])
         xml_decode = xml.decode()

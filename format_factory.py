@@ -1,11 +1,11 @@
-from formats import Json, Xml
+from formats import JsonSerializer, XmlSerializer
 
 
 class FormatFactory:
     def __init__(self):
         self.formats = {
-            'json': Json(),
-            'xml': Xml(),
+            'json': JsonSerializer(),
+            'xml': XmlSerializer(),
         }
 
     def set_format(self, name, value):
